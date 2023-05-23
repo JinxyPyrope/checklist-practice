@@ -1,9 +1,12 @@
 import React from 'react'
 
-function checklist() {
+function Checklist() { 
+  const checklist = ["Apple", "Banana", "Tea", "Coffee"]
   return (
-    <div>checklist</div>
+  
+
+    <div className='checkList'></div>
   )
 }
 
-export default checklist
+export default Checklist
