@@ -15,7 +15,12 @@ function Checklist() {
     }
 
     setChecked(updatedList)
+    console.log(checked)
   }
+
+  // const isChecked = (item) => {
+  //   checked.includes(item) ? "checked-item" : "not-checked-item";
+  // }
 
   return (
     <div className="checkList">
