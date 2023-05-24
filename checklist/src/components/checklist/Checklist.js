@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./Checklist.css"
 
 function Checklist() {
   const checklist = ["Apple", "Banana", "Tea", "Coffee"]
@@ -18,9 +19,7 @@ function Checklist() {
     console.log(checked)
   }
 
-  // const isChecked = (item) => {
-  //   checked.includes(item) ? "checked-item" : "not-checked-item";
-  // }
+  const isChecked = item => (checked.includes(item) ? "checked-item" : "not-checked-item")
 
   return (
     <div className="checkList">
@@ -28,7 +27,7 @@ function Checklist() {
         {checklist.map((item, index) => (
           <div key={index}>
             <input value={item} type="checkbox" onChange={handleCheck} />
-            <span>{item}</span>
+            <span className={isChecked(item)}>{item}</span>
           </div>
         ))}
       </div>
