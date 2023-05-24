@@ -6,6 +6,7 @@ function Checklist() {
 
   const [checked, setChecked] = useState([])
 
+  // Checks to add or remove from the list with the checkamrk
   const handleCheck = e => {
     let updatedList = [...checked]
 
@@ -19,7 +20,15 @@ function Checklist() {
     console.log(checked)
   }
 
+  //Adds a slash through if an item is checked by giving it a className
   const isChecked = item => (checked.includes(item) ? "checked-item" : "not-checked-item")
+
+  // Creates a string to show the list in view
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item
+      })
+    : ""
 
   return (
     <div className="checkList">
@@ -31,6 +40,7 @@ function Checklist() {
           </div>
         ))}
       </div>
+      <div>{`Items checked are: ${checkedItems}`}</div>
     </div>
   )
 }
