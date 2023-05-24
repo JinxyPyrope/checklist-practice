@@ -5,8 +5,8 @@ function Checklist() {
 
   const [checked, setChecked] = useState([])
 
-  const updatedList = e => {
-    const updatedList = [...checked]
+  const handleCheck = e => {
+    let updatedList = [...checked]
 
     if (e.target.checked) {
       updatedList = [...checked, e.target.value]
@@ -22,7 +22,7 @@ function Checklist() {
       <div className="list-container">
         {checklist.map((item, index) => (
           <div key={index}>
-            <input value={item} type="checkbox" />
+            <input value={item} type="checkbox" onChange={handleCheck} />
             <span>{item}</span>
           </div>
         ))}
